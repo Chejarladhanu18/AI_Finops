@@ -28,6 +28,11 @@ class NavbarSerializer(serializers.ModelSerializer):
         model = Navbar
         fields = '__all__'
 
+class LoginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['email', 'password']
+
 
 class HeroSerializer(serializers.ModelSerializer):
     class Meta:
@@ -110,4 +115,9 @@ class FooterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Footer
+        fields = '__all__'
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
         fields = '__all__'
