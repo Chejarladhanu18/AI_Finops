@@ -152,9 +152,10 @@ class FooterItem(models.Model):
     section = models.ForeignKey(
         FooterSection,
         on_delete=models.CASCADE,
-        related_name="items"   # ✅ IMPORTANT
+        related_name="items"
     )
     name = models.CharField(max_length=100)
+    path = models.CharField(max_length=200, blank=True, null=True)  # ✅ ADD THIS
 
     def __str__(self):
         return self.name
